@@ -10,12 +10,7 @@ from keras import models
 from keras import optimizers
 
 ###############################################################################################################################
-###Remember to change the all variables (especially weightsFile name) before executing the code.
-###############################################################################################################################
 #Directory names of the folders that contain the images that need to be trained and tested for.
-
-#trainDir = 'G:/Data/EEG/2A_Saugat/Outpost_train'
-#testDir = 'G:/Data/EEG/2A_Saugat/Outpost_test'
 
 trainDir = 'G:/GitHub/BinaryImageClassificationKeras/CarsVsPlanes/train'
 testDir = 'G:/GitHub/BinaryImageClassificationKeras/CarsVsPlanes/test'
@@ -85,7 +80,6 @@ y_test = label_binarize(y_test, classes = class_names)
 
 
 #%% Define model
-
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)))
 model.add(layers.MaxPooling2D((2, 2)))
